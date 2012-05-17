@@ -171,7 +171,7 @@ var PDFFunction = (function PDFFunctionClosure() {
           // e_i' = min(max(e_i, 0), Size_i - 1)
           e = Math.min(Math.max(e, 0), size[i] - 1);
 
-          var in = i * n;
+          var i_n = i * n;
 
           for (var j = 0; j < n; ++j) {
             // average the two nearest neighbors in the sampling table
@@ -181,7 +181,7 @@ var PDFFunction = (function PDFFunctionClosure() {
             rj = interpolate(rj, 0, mask, 1, decode[2 * j], decode[2 * j + 1]);
 
             // y_j = min(max(r_j, range_2j, range_2j+1)
-            y[in + j] = Math.min(Math.max(rj, range[2 * j], range[2 * j + 1]));
+            y[i_n + j] = Math.min(Math.max(rj, range[2 * j], range[2 * j + 1]));
           }
         }
 
